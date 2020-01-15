@@ -3,11 +3,24 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var debug = require('debug')('express-locallibrary-tutorial:app');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+// Set up mongoose connection
+var mongoose = require('mongoose');
+// copied from https://github.com/Automattic/mongoose/issues/8156
+mongoose.connect(process.env.MONGODBURI, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+})
+.then(() => debug('DB Connected!'))
+.catch(err => {
+  debug('DB Connection Error: ${err.message}');
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
