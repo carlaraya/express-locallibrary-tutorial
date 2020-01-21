@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGODBURI, {
 })
 .then(() => debug('DB Connected!'))
 .catch(err => {
-  debug('DB Connection Error: ${err.message}');
+  debug(`DB Connection Error: ${err.message}`);
 });
 
 // view engine setup
