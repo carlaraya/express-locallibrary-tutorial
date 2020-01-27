@@ -8,6 +8,7 @@
 1. Install dependencies: `npm install`
 1. Populate database: `node populatedb.js`
 1. Run dev server: `npm run serverstart`
+1. Done!
 
 ## Git Help
 
