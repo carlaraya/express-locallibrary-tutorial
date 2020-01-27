@@ -41,6 +41,11 @@ git commit -m "Your comment goes here"
 git push origin master
 ```
 
+**to make a branch unit_test**
+```
+git checkout -b unit_test
+```
+
 **to switch to branch unit_test**
 
 first add and commit the changes with
@@ -54,6 +59,17 @@ then go to another branch
 ```
 git checkout unit_test
 ```
+
+**case 1 if you have changes in master and you want to merge it with unit_test**
+
+```
+
+git checkout master
+git pull
+git checkout unit_test
+git merge master
+```
+
 
 **to reset local changes made to branch unit_test**
 
